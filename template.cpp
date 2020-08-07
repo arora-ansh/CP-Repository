@@ -12,21 +12,21 @@
 using namespace std;
 
 inline void fastio(){
-  ios_base::sync_with_stdio(false); 
-  cin.tie(0); 
-  cout.tie(0);
+    ios_base::sync_with_stdio(false); 
+    cin.tie(0); 
+    cout.tie(0);
 }
 
 typedef long long int ll;
 
 int main(){
-  fastio();
-  int T;
-  cin>>T;
-  for(int t=0;t<T;t++){
-  //logic here  mostly lol
-  }
-  return 0;
+    fastio();
+    int T;
+    cin>>T;
+    for(int t=0;t<T;t++){
+      //logic here  mostly lol
+    }
+    return 0;
 }
 
 
