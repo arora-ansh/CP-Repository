@@ -1,5 +1,5 @@
 //Kadane's Algorithm for finding max sum possible from contiguous arrays
-//DP
+//DP used, since we store the value as it is being calculated and use it for our purpose
 #include <iostream>
 using namespace std;
 
