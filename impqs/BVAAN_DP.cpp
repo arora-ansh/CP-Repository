@@ -5,7 +5,9 @@ So, we add an option(Knapsack like) whether we'll choose that particular element
 - We select the character, pass solver(i+1,j+1,k-1),
 - We don't select the character and pass solver (i+1,j,k) and (i,j+1,k)
 - We find the max of all 3.
-
+In case of no match, we have 2 options-
+- solver(i+1,j,k) and solver(i,j+1,k)
+Memoize answers as they are found ez time complexity reduction. Tho iska Iterative solution abhi dekhna padega 
 */
 #include <bits/stdc++.h>
 using namespace std;
