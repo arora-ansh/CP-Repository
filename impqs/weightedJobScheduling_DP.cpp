@@ -1,3 +1,9 @@
+/*
+In this problem, the greedy part was to arrange the arrays based on their end times.
+After this, we iterate over the array, wherein we store the best case till that particular point
+On each case, we can either 1) not select an element and carry on with the max result found in prev case or 2) select the element and find the max case in from the previous elements stored in the DP array where the end time<=start time of present case
+This can be optimized by using binary search, thus letting us solve the q in O(nlogn)
+*/
 #include<bits/stdc++.h>
 #include<algorithm>
 using namespace std;
