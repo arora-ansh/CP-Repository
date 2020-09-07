@@ -1,3 +1,5 @@
+//Segment Tree basic program for range addition in C++, includes template for tree build, tree update and tree querying
+
 #include <iostream>
 using namespace std;
 
