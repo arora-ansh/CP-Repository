@@ -16,4 +16,5 @@
   6. vasya v rhezo
   7. 2 v 3
   8. horrible queries
+- CSES
 
