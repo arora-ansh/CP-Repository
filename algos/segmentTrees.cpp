@@ -39,7 +39,7 @@ int queryTree(int *tree,int start,int end,int treeNode, int rangeLeft, int range
 	}
 	//Inside Range
 	if(start >= rangeLeft && end <= rangeRight){
-		return treeNode;
+		return tree[treeNode];
 	}
 	int mid = (start+end)/2;
 	int leftSum = queryTree(tree,start,mid,2*treeNode,rangeLeft,rangeRight);
