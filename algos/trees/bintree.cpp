@@ -82,6 +82,52 @@ treeNode * treeCopy(treeNode *root){
     return copy;
 }
 
+void bstsearch(treeNode *root, int x){
+    treeNode current = root;
+    while(current!=NULL){
+        if(current.data==x){
+            return true;
+        }
+        else if(current.data>x){
+            return bstsearch(current->left, x);
+        }
+        else if(current.data<x){
+            return bstsearch(current->right, x);
+        }
+    }
+    return false;
+}
+
+void bstinsert(treeNode *root, treeNode x){//x is treenode to be inserted to the bst
+    if(root==NULL){
+        return;
+    }
+    if(root->data >= x->data){
+        if(root->left==NULL){
+            root->left = x;
+        }
+        else{
+            bstinsert(root->left,x);
+        }
+    }
+    else{
+        if(root->right==NULL){
+            root->right = x;
+        }
+        else{
+            bstinsert(root->right,x);
+        }
+    }
+}
+
+//bstcheck can be done by either modifying inorder traversal or by this method
+bool bstcheck(treeNode *root, int min, int max){
+    if(root==NULL){
+        return true;
+    }
+    return(root->data>min && root->data<max && bstcheck(root->left,min,root->data) && bstcheck(root->right,root->data,max));
+}
+
 int main(){
     
     return 0;
