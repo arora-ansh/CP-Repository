@@ -12,6 +12,7 @@
 #include <string.h>
 #include <string>
 using namespace std;
+#define MOD 1000000007
 
 inline void fastio(){
     ios_base::sync_with_stdio(false); 
