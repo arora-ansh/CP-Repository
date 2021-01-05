@@ -128,6 +128,7 @@ bool bstcheck(treeNode *root, int min, int max){
     return(root->data>min && root->data<max && bstcheck(root->left,min,root->data) && bstcheck(root->right,root->data,max));
 }
 
+
 int main(){
     
     return 0;
