@@ -21,6 +21,7 @@ inline void fastio(){
 }
 
 typedef long long int ll;
+typedef long double ld;
 
 int main(){
     fastio();
