@@ -4,7 +4,7 @@ using namespace std;
 
 class Graph{
     public:
-        int v;
+        int v;          //Number of vertices
         list<int> *l;   //Adjaceny Lists for each vertex, array of adjaceny lists being maintained
 
         Graph(int x){
@@ -28,6 +28,27 @@ class Graph{
                 cout<<endl;
             }
         }
+
+        void BFS(int s){ //s is starting node
+            bool *visited = new bool[v];
+            for(int i=0;i<v;i++){
+                visited[i] = false;
+            }
+            list<int> queue;
+            visited[s] = true;
+            queue.push_back(s);
+            while(!queue.empty()){
+                s = queue.front();
+                cout<<s<<" ";
+                queue.pop_front();
+                for(int x : l[s]){
+                    if(!visited[x]){
+                        visited[x] = true;
+                        queue.push_back(x);
+                    }
+                }
+            }
+        }
 };
 
 int main(){
@@ -40,5 +61,6 @@ int main(){
     g.addEdge(2,3);
     g.addEdge(1,3);
     g.printAdjLists();
+    g.BFS(0);
     return 0;
 }
