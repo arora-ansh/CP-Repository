@@ -1,11 +1,13 @@
 #include <iostream>
 #include <list>
+#include <unordered_map>
 using namespace std;
 
 class Graph{
     public:
         int v;          //Number of vertices
         list<int> *l;   //Adjaceny Lists for each vertex, array of adjaceny lists being maintained
+        unordered_map<int, bool> visited;   // For DFS
 
         Graph(int x){
             v = x;
@@ -49,6 +51,16 @@ class Graph{
                 }
             }
         }
+
+        void DFS(int s){ //s is starting node
+            visited[s] = true;
+            cout<<s<<" ";
+            for(int x : l[s]){
+                if(!visited[x]){
+                    DFS(x);
+                }
+            }
+        }
 };
 
 int main(){
@@ -62,5 +74,8 @@ int main(){
     g.addEdge(1,3);
     g.printAdjLists();
     g.BFS(0);
+    cout<<endl;
+    g.DFS(0);
+    cout<<endl;
     return 0;
 }
