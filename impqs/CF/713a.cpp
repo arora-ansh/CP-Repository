@@ -24,7 +24,20 @@ typedef long long int ll;
 typedef long double ld;
 
 void solve(){
-	//SOLVE HERE
+	int n;
+	cin>>n;
+	vector<int> arr(n);
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	vector<int> arr2(arr);
+	sort(arr2.begin(),arr2.end());
+	for(int i=0;i<n;i++){
+		if(arr[i]!=arr2[1]){
+			cout<<i+1<<endl;
+			break;
+		}
+	}
 }
 
 int main(){
@@ -36,5 +49,3 @@ int main(){
     }
     return 0;
 }
-
-
