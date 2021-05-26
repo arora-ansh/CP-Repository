@@ -1,3 +1,5 @@
+// THIS IS VERY GOOD
+
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -38,15 +40,29 @@ typedef long double ld;
 
 void solve(){
 	cin>>n;
+    vi arr;
+    ll sum = 0; //Would give the max answer, this now needs to be reduced
+    F(i,n){
+        int temp;
+        cin>>temp;
+        sum+=temp;
+        arr.push_back(temp);
+    }
+    sortall(arr);
+    ll ans = 1;
+    for(int i=0;i<n && arr[i]<=ans;i++){
+        ans += arr[i];
+    }
+    cout<<ans<<endl;
 }
 
 int main(){
     fastio();
-    int t;
-    cin>>t;
-    while(t--){
-		solve();
-    }
-	// solve();
+    // int t;
+    // cin>>t;
+    // while(t--){
+	// 	solve();
+    // }
+	solve();
     return 0;
 }
