@@ -52,7 +52,7 @@ class Graph{
             }
         }
 
-        void DFS(int s){ //s is starting node
+        void DFS(int s){ //s is starting node OR USE STACKS
             visited[s] = true;
             cout<<s<<" ";
             for(int x : l[s]){

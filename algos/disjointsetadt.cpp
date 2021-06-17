@@ -1,13 +1,14 @@
-#include<iostream>
-
 class disjointset{
+
+    public: 
+
     int n;
     int* parent;
     int* rank; // Essentially tree balancing mechanism, to maintain uniformity among height of trees on union
     int setcount;
 
     disjointset(int n){
-        this.n = n;
+        this->n = n;
         setcount = n;
         parent = new int[n];
         rank = new int[n];
@@ -33,14 +34,14 @@ class disjointset{
         return find(i)==find(j); //If both have same parent, they are connected
     }
 
-    void union(int i, int j){
+    void merge(int i, int j){
         int iparent = find(i);
         int jparent = find(j);
         if(iparent == jparent){
             return; //Already in same group
         }
-        iprank = rank[iparent];
-        jprank = rank[jparent];
+        int iprank = rank[iparent];
+        int jprank = rank[jparent];
 
         if(iprank<jprank){
             parent[i] = jparent;
@@ -54,4 +55,4 @@ class disjointset{
         }
         setcount--;
     }
-}
+};
