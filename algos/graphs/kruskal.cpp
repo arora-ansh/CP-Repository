@@ -63,7 +63,7 @@ class disjointset{
     }
 };
 
-// n = number of nodes in graph, graph is set of adjaceny lists for the graph in form p<i,i> where first is index of node and second is weight
+// n = number of nodes in graph, graph is set of adjacency lists for the graph in form p<i,i> where first is index of node and second is weight
 void kruskal(int n, vector<vector<pair<int,int>>> graph){
     disjointset* ds = new disjointset(n);
     vector<int> parent(n,-1);
