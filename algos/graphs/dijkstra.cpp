@@ -1,4 +1,13 @@
 // Dijkstra algortithm to find out shortest path in O(E + VlogV)
+/*
+I am getting lazy and will make my notes here itself. Shockingly enough, makes for easier reading as well *_* who knew.
+SSSP Algos - 
+Given G = (V, E), w and a source vertex S, find ∂(S, V) [the best path] from S to each v ∈ V, where ∂ is the shortest path connecting the two.
+
+Note - Dijkstra doesn't do negative edges, you're better off with Belmman Ford if you're the kind. 
+
+
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
