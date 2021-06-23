@@ -1,5 +1,5 @@
 class disjointset{
-
+    
     public: 
 
     int n;
@@ -40,17 +40,14 @@ class disjointset{
         if(iparent == jparent){
             return; //Already in same group
         }
-        int iprank = rank[iparent];
-        int jprank = rank[jparent];
-
-        if(iprank<jprank){
-            parent[i] = jparent;
+        else if(rank[iparent] < rank[jparent]){
+            parent[iparent] = jparent;
         }
-        else if(iprank>jprank){
-            parent[j] = iparent;
+        else if(rank[iparent] > rank[jparent]){
+            parent[jparent] = iparent;
         }
         else{
-            parent[j] = iparent;//Arbitrarily
+            parent[jparent] = iparent; //Arbitrary
             rank[iparent]++;
         }
         setcount--;
