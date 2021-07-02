@@ -1,6 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//7 3 5 3 6 2 9 8
+/*
+7
+3
+3 5
+3 5
+3 5 6
+2 5 6
+2 5 6 9
+2 5 6 8
+*/
+
 int main() {
   int n;
   cin >> n;
@@ -15,5 +27,7 @@ int main() {
       *it = x;
     }
   }
+  for(int i : dp) cout<<i<<" ";
+  cout<<endl;
   cout << dp.size() << endl;
 }

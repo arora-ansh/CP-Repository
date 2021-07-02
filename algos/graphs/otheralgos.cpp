@@ -24,29 +24,32 @@ bool isCyclic(int V, vector<int> adj[]) {
 
 //Check if graph is Bipartite (using coloring)
 bool isBipartite(vector<vector<int>>& graph) {
-    int n = graph.size();
-    for(int root=0;root<n;root++){
-        if(!color[root]){
-            queue<int> q;
-            q.push(root);
-            vector<int> color(n,0);//1-RED 2-BLUE
-            color[root] = 1;
-            while(!q.empty()){
-                int x = q.front(); q.pop();
-                for(int i : graph[x]){
-                    if(color[i]==color[x]){
-                        return false; //If neighbor has same color, this means that tree condition is dissatisfied
-                    }
-                    if(!color[i]){
-                        color[i] = (color[x]==1) ? 2 : 1;
-                        q.push(i); //Assign neighbors the opposite color to check for tree condition
+        int n = graph.size();
+        vector<int> color(graph.size(),0);
+        vector<int> visited(graph.size(),false);
+        for(int root=0;root<n;root++){
+            if(!visited[root]){
+                queue<int> q;
+                q.push(root);
+                color[root] = 1;
+                while(!q.empty()){
+                    int x = q.front(); q.pop();
+                    if(visited[x]) continue;
+                    visited[x] = true;
+                    for(int i : graph[x]){
+                        if(color[i]==color[x]){
+                            return false; //If neighbor has same color, this means that tree condition is dissatisfied
+                        }
+                        if(!color[i]){
+                            color[i] = (color[x]==1) ? 2 : 1;
+                            q.push(i); //Assign neighbors the opposite color to check for tree condition
+                        }
                     }
                 }
             }
         }
+        return true;
     }
-    return true;
-}
 
 //Finding a Graph's Sink
 int findJudge(int n, vector<vector<int>>& trust) {
