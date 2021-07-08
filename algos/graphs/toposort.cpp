@@ -32,7 +32,7 @@ void topoSort(int n, vector<vector<int>> graph){
 }
 
 /*
-    A better approach to solving this is using the concept of indegrees and outdegrees - 
+    A better approach to solving this is using the concept of indegrees- 
     Indegree = # of edges coming into a node
     First node in the topo sort will ofcourse be a node with indegree 0. If none such exist, there is a deadlock case
     Algorithm - 
