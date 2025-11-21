@@ -29,3 +29,20 @@ int main(){
 	}
 	return 0;
 }
+
+// Faster method to do it using memory rather than time 
+// #horizontal scaling lol
+
+void solve(){
+    cin>>n;
+    vi arr(n);
+    F(i, n-1) {
+        int x; cin>>x; arr[x-1] = 1;
+    }
+    F(i,n) {
+        if (arr[i] == 0) {
+            cout<<(i+1);
+            break;
+        }
+    }
+}
