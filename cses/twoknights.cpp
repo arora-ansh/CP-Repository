@@ -37,12 +37,17 @@ typedef long long int ll;
 typedef long double ld;
 
 void solve(){
-    ll n; cin>>n;
-    ll ans = 0, cur = 5;
-    while (cur <= n) {
-        ans += n/cur; cur *= 5;
+    cin>>n;
+    cout<<0<<endl;
+    if (n==1) return;
+    ll x = 2, y = 3;
+    ll a = 2, b = 4;
+    for(int i=1; i<n; i++) {
+        ll z = x * y;
+        cout<<z<<endl;
+        x += a; a += 2;
+        y += b; b += 1;
     }
-    cout << ans;
 }
 
 int main(){
@@ -57,20 +62,14 @@ int main(){
 }
 
 /*
-Trailing 0s in n!
-I can create 0s by - 
-- Multiplying 2 and 5 (Ex 5!)
-- Multiplying multiples of 10 (120*6*7*8*9*10)
-Since every 2nd number is giving me a 2, multiples of 5 will decide this
-So I guess /5 will give me trailing 0s - 1 each
-Also /25 will give me the ones introduced by 25 multiples - 2 each
-/125 will give 3 each and so on
+0 = 0 * 0
+6 = 2 * 3
+28 = 4 * 7 
+96 = 8 * 12
+252 = 14 * 18
+550 = 22 * 25
+1056 = 32 * 33
+1848
 
-Ex - 239
-239/5 = 47
-239/25 = 9
-239/125 = 1
-
-Each iteration will already have accounted for the prev iterations 5s
 */
 
